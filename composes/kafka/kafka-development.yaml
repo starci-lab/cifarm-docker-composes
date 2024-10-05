@@ -13,7 +13,13 @@ services:
       - zookeeper
     ports:
       - 29092:29092
-    env_file:
-      - ../../.env.local
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://127.0.0.1:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-# docker compose -f composes/kafka/kafka-development.yaml -p kafka-clusters up --build -d --force-recreate
+# docker compose -f composes/kafka/kafka-development.yaml -p kafka-clusters up --build -d -
