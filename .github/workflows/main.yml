@@ -16,5 +16,5 @@ jobs:
     - name: Run `docker compose`
       env:
         KAFKA_ADVERTISED_LISTENERS: ${{ secrets.KAFKA_ADVERTISED_LISTENERS }}
-      run: docker compose -f composes/kafka.yaml -p kafka-clusters up --build -d 
+      run: docker compose -f composes/kafka/kafka-production.yaml -p kafka-clusters up --build -d 
   
