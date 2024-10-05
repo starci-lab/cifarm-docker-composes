@@ -12,7 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4 
- 
+
     - name: Run `docker compose`
+      env:
+        KAFKA_ADVERTISED_LISTENERS: ${{ secrets.KAFKA_ADVERTISED_LISTENERS }}
       run: docker compose -f composes/kafka.yaml -p kafka-clusters up --build -d 
   
