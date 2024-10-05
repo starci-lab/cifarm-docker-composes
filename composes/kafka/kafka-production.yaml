@@ -20,4 +20,4 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-# docker compose -f composes/kafka.yaml up --build -d --force-recreate
+#  docker compose -f composes/kafka/kafka-production.yaml -p kafka-clusters up --build -d --force-recreate

@@ -16,4 +16,4 @@ services:
     env_file:
       - ../../.env.local
 
-# docker compose -f composes/kafka.yaml up --build -d --force-recreate
+# docker compose -f composes/kafka/kafka-development.yaml -p kafka-clusters up --build -d --force-recreate
