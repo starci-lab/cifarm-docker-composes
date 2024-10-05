@@ -29,3 +29,4 @@ jobs:
       - name: Run docker composes
         run: |
           docker compose -f composes/kafka.yaml up --build -d --force-recreate
+ 
